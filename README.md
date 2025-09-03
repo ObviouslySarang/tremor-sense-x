@@ -1,73 +1,256 @@
-# Welcome to your Lovable project
+# 🌍 SeismoWatch
 
-## Project info
+**Real-Time Earthquake Detection System Powered by Social Media Intelligence**
 
-**URL**: https://lovable.dev/projects/75a5b6d6-0fce-450c-86f8-36d1a27d215e
+SeismoWatch leverages real-time Twitter data to detect earthquakes faster than traditional seismic networks, providing instant alerts with crowdsourced evidence and media verification.
 
-## How can I edit this code?
+![SeismoWatch Dashboard](https://img.shields.io/badge/Status-In%20Development-orange) ![React](https://img.shields.io/badge/React-18.3.1-blue) ![TypeScript](https://img.shields.io/badge/TypeScript-Latest-blue) ![TailwindCSS](https://img.shields.io/badge/TailwindCSS-Latest-06B6D4)
 
-There are several ways of editing your application.
+---
 
-**Use Lovable**
+## 🚀 Features
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/75a5b6d6-0fce-450c-86f8-36d1a27d215e) and start prompting.
+### 🔍 **Real-Time Detection**
+- Twitter/X streaming API integration for live earthquake mentions
+- Location-based clustering and volume spike detection
+- Multi-language keyword monitoring (English, Japanese, Spanish, etc.)
 
-Changes made via Lovable will be committed automatically to this repo.
+### 📊 **Intelligence & Scoring**
+- Confidence scoring based on tweet volume, verified users, and location density
+- NLP-powered content classification to filter false positives
+- Real-time authenticity assessment
 
-**Use your preferred IDE**
+### 🗺️ **Interactive Visualization**
+- Live earthquake activity map with clickable event pins
+- Real-time tweet feed with media attachments
+- Confidence scores and event timelines
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+### 🔔 **Alert System**
+- Email and SMS notifications for subscribed users
+- Customizable alert thresholds and regional preferences
+- Links to relevant tweets, videos, and media evidence
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+### 👤 **User Management**
+- User registration and authentication
+- Personalized alert preferences
+- Regional subscription management
 
-Follow these steps:
+---
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+## 🛠️ Tech Stack
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+### **Frontend**
+- **React 18** with TypeScript
+- **TailwindCSS** + **ShadCN UI** components
+- **React Query** for state management
+- **React Router** for navigation
+- **Recharts** for data visualization
+- **Mapbox/Leaflet** for interactive maps *(planned)*
 
-# Step 3: Install the necessary dependencies.
-npm i
+### **Backend** *(planned)*
+- **Node.js** + **Express.js** + TypeScript
+- **MongoDB** + **Mongoose**
+- **Twitter API v2** / Streaming API
+- **Socket.IO** for real-time updates
+- **OpenAI API** for NLP classification
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+### **Notifications** *(planned)*
+- **Twilio API** for SMS alerts
+- **SendGrid API** for email notifications
+
+---
+
+## 📋 Prerequisites
+
+- **Node.js** (v18 or higher)
+- **npm** or **yarn** or **bun**
+- **Twitter API** credentials *(for backend)*
+
+---
+
+## 🚀 Getting Started
+
+### 1. Clone the repository
+```bash
+git clone https://github.com/your-username/seismowatch.git
+cd seismowatch
 ```
 
-**Edit a file directly in GitHub**
+### 2. Install dependencies
+```bash
+npm install
+# or
+yarn install
+# or
+bun install
+```
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+### 3. Start the development server
+```bash
+npm run dev
+# or
+yarn dev
+# or
+bun dev
+```
 
-**Use GitHub Codespaces**
+### 4. Open your browser
+Navigate to `http://localhost:5173` to see the application.
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+---
 
-## What technologies are used for this project?
+## 🏗️ Project Structure
 
-This project is built with:
+```
+src/
+├── components/          # Reusable UI components
+│   ├── ui/             # ShadCN UI components
+│   ├── SeismoHero.tsx  # Landing page hero section
+│   ├── LiveDashboard.tsx # Real-time dashboard
+│   └── FeatureSection.tsx # Feature showcase
+├── pages/              # Route components
+│   ├── Index.tsx       # Landing page
+│   ├── Dashboard.tsx   # Main dashboard
+│   └── NotFound.tsx    # 404 page
+├── hooks/              # Custom React hooks
+├── lib/                # Utility functions
+└── main.tsx           # Application entry point
+```
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+---
 
-## How can I deploy this project?
+## 🎯 Key Components
 
-Simply open [Lovable](https://lovable.dev/projects/75a5b6d6-0fce-450c-86f8-36d1a27d215e) and click on Share -> Publish.
+### **SeismoHero**
+Landing page hero section with animated seismic waves and call-to-action buttons.
 
-## Can I connect a custom domain to my Lovable project?
+### **LiveDashboard** 
+Real-time earthquake monitoring interface with:
+- Live event feed
+- Confidence scoring
+- Location filtering
+- Alert management
 
-Yes, you can!
+### **FeatureSection**
+Showcases core platform capabilities and differentiators.
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+---
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+## 🔮 Planned API Endpoints
+
+### **Earthquake Detection**
+- `GET /api/tweets/live-feed` - Recent earthquake-related tweets
+- `GET /api/events` - Detected seismic events
+- `POST /api/events/verify` - Event verification workflow
+
+### **User Management**
+- `POST /api/auth/register` - User registration
+- `POST /api/auth/login` - User authentication
+- `GET /api/user/preferences` - Alert preferences
+- `PUT /api/user/preferences` - Update preferences
+
+### **Notifications**
+- `POST /api/alerts/send` - Trigger alert notifications
+- `GET /api/alerts/history` - Alert history
+
+---
+
+## 🧮 Authenticity Algorithm
+
+SeismoWatch uses a multi-factor confidence scoring system:
+
+```typescript
+function calculateEventConfidence(tweetCluster: TweetCluster): number {
+  const volumeScore = Math.min(tweetCluster.count / 10, 1);
+  const verifiedUserRatio = tweetCluster.verifiedUsers / tweetCluster.totalUsers;
+  const locationDensity = 1 - (tweetCluster.uniqueLocations / tweetCluster.count);
+  
+  return (0.6 * volumeScore) + (0.3 * verifiedUserRatio) + (0.1 * locationDensity);
+}
+```
+
+**Factors:**
+- **Tweet Volume** (60%): Spike in earthquake mentions
+- **User Verification** (30%): Ratio of verified Twitter accounts
+- **Location Clustering** (10%): Geographic concentration of reports
+
+---
+
+## 🎨 Design System
+
+SeismoWatch uses a custom seismic-themed design system:
+
+- **Colors**: Deep earth tones with seismic accent colors
+- **Gradients**: Layered geological gradients
+- **Animations**: Seismic wave patterns and pulse effects
+- **Typography**: Clean, readable fonts optimized for data display
+
+---
+
+## 🚀 Deployment
+
+### **Frontend (Vercel)**
+```bash
+npm run build
+# Deploy to Vercel via GitHub integration
+```
+
+### **Backend (Railway/Fly.io)** *(planned)*
+```bash
+# Docker deployment configuration coming soon
+```
+
+---
+
+## 🤝 Contributing
+
+We welcome contributions! Please see our [Contributing Guidelines](CONTRIBUTING.md) for details.
+
+### **Development Workflow**
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+---
+
+## 📊 Roadmap
+
+- [ ] **Phase 1**: Frontend dashboard and visualization *(Current)*
+- [ ] **Phase 2**: Twitter API integration and backend development
+- [ ] **Phase 3**: Real-time notifications and user management
+- [ ] **Phase 4**: Mobile app and advanced analytics
+- [ ] **Phase 5**: Integration with official seismic networks (USGS, EMSC)
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+---
+
+## 🔗 Links
+
+- **Live Demo**: [seismowatch.vercel.app](https://seismowatch.vercel.app) *(coming soon)*
+- **Documentation**: [docs.seismowatch.dev](https://docs.seismowatch.dev) *(coming soon)*
+- **API Status**: [status.seismowatch.dev](https://status.seismowatch.dev) *(coming soon)*
+
+---
+
+## 💡 Inspiration
+
+SeismoWatch was inspired by the need for faster earthquake detection systems that leverage the power of crowdsourced reporting through social media platforms.
+
+---
+
+## 📞 Support
+
+For support, email support@seismowatch.dev or join our [Discord community](https://discord.gg/seismowatch).
+
+---
+
+<p align="center">
+  <strong>⚡ Detecting earthquakes at the speed of social media ⚡</strong>
+</p>
